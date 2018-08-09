@@ -1,0 +1,6 @@
+List of elements called nodes are connected together in single file line
+
+2 types of linked list - Singly Linked List and Doubly Linked List
+
+Singly - Each node has reference to next node
+Doubly - Each node has refernece to next as well as previous node
