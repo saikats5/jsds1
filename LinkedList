@@ -36,3 +36,36 @@ LinkedList.prototype.addToHead = function(value){
     }
     this.head = newNode;
 }
+
+var ll = new LinkedList();
+ll.addToHead(100);
+
+{
+    head: {value: 100, next: null, prev: null},
+    tail: {value: 100, next: null, prev: null}
+}
+
+ll.addToHead(200);
+
+{
+    head: {
+        value: 200,
+        next: {value: 100, next: null, prev: [Circular]},
+        prev: null
+    },
+    tail: {
+        value: 100,
+        next: null,
+        prev: {value: 200, next: [Circular], prev: null}
+    }
+}
+
+LinkedList.prototype.addToTail = function(value){
+    var newNode = new Node(value, null, this.tail);
+    if(this.tail){
+        this.tail.next = newNode;
+    }else{
+        this.head = newNode;
+    }
+    this.tail = newNode;
+}
