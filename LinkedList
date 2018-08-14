@@ -26,3 +26,13 @@ var userList = new LinkedList(); //each instances are new linked list
 
 var node1 = new Node(100, 'node2', null);
 {value: 100, next: 'node2', prev: null}
+
+LinkedList.prototype.addToHead = function(value){
+    var newNode new Node(value, this.head, null);
+    if(this.head){
+        this.head.prev = newNode;
+    }else{
+        this.tail = newNode;
+    }
+    this.head = newNode;
+}
