@@ -69,3 +69,52 @@ LinkedList.prototype.addToTail = function(value){
     }
     this.tail = newNode;
 }
+
+myLL.addToTail(10);
+myLL.addToTail(20);
+myLL.addToTail(30);
+myLL.addToHead(100);
+
+{
+    head: {
+        value: 100,
+        next: {value: 10, next: [Object], prev: [Circular]},
+        prev: null
+    },
+    tail: {
+        value: 30,
+        next: null,
+        prev: {value: 20, next: [Circular], prev: [Object]}
+    }
+}
+
+LinkedList.prototype.removeHead = function(){
+    if(!this.head){
+        return null;
+    }
+    var val = this.head.value;
+    this.head = this.head.next;
+    if(this.head){
+        this.head.prev = null;
+    }else{
+        this.tail = null;
+    }
+    retutn val;
+}
+
+ll.removeHead(); //value only
+
+LinkedList.prototype.removeTail = function(){
+    if(!this.tail){
+        return null;
+    }
+    var val = this.tail.value;
+    this.tail = this.tail.prev;
+    if(this.tail){
+        this.tail.next = null;
+    }else{
+        this.head = null;
+    }
+    return val;
+
+}
