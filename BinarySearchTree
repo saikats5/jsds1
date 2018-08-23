@@ -11,3 +11,76 @@ function factorial(num){
         return num * factorial(num - 1);
     }
 } 
+
+call stack will be to iterate first then will return the value from top i.e., returning 1 and so on to multiply and return the answer(winding and unwinding)
+
+function BST(value){
+    this.value = value;
+    this.left = null;
+    this.right = null;
+}
+
+BST.prototype.insert = function(value){
+    if(value <= this.value){
+        if(!this.left){
+            this.left = new BST(value);
+        }else{
+            this.left.insert(value);
+        }
+    }else if(value > this.value){
+        if(!this.right){
+            this.right = new BST(value);
+        }else{
+            this.right.insert(value);
+        }
+    }
+}
+
+var bst = new BST(50);
+bst.insert(60);
+
+BST.prototype.contains = function(value){
+    if(value === this.value){
+        return true;
+    }else if(value <= this.value){
+        if(!this.left){
+            this.left = false;
+        }else{
+            this.left.contains(value);
+        }
+    }else if(value > this.value){
+        if(!this.right){
+            this.right = false;
+        }else{
+            this.right.contains(value);
+        }
+    }
+}
+
+Depth First Traversal
+BST.prototype.depthFirstTraversal = function(iterateFunc){
+    if(this.left){
+        this.left.depthFirstTraversal(iterateFunc);
+    }
+    iterateFunc(this.value);
+    if(this.right){
+        this.right.depthFirstTraversal(iterateFunc);
+    }
+}
+
+bst.depthFirstTraversal(log);
+function log(value){
+    console.log(value);
+}
+
+BST.prototype.depthFirstTraversal = function(iterateFunc, order){
+    if(this.left){
+        this.left.depthFirstTraversal(iterateFunc, order);
+    }
+    if(order === 'in-order'){
+        iterateFunc(this.value);
+    }
+    if(this.right){
+        this.right.depthFirstTraversal(iterateFunc, order);
+    }
+}
