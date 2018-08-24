@@ -74,6 +74,9 @@ function log(value){
 }
 
 BST.prototype.depthFirstTraversal = function(iterateFunc, order){
+    if(order === 'pre-order'){
+        iterateFunc(this.value);
+    }
     if(this.left){
         this.left.depthFirstTraversal(iterateFunc, order);
     }
@@ -82,5 +85,8 @@ BST.prototype.depthFirstTraversal = function(iterateFunc, order){
     }
     if(this.right){
         this.right.depthFirstTraversal(iterateFunc, order);
+    }
+    if(order === 'post-order'){
+        iterateFunc(this.value);
     }
 }
