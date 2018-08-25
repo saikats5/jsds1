@@ -90,3 +90,5 @@ BST.prototype.depthFirstTraversal = function(iterateFunc, order){
         iterateFunc(this.value);
     }
 }
+
+
