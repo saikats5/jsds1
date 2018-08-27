@@ -106,3 +106,7 @@ BST.prototype.breadthFirstTraversal = function(iterateFunc){
     }
 }
 
+function log(node){
+    console.log(node.value); // as we are passing the whole node in breadth first traversal
+}
+
