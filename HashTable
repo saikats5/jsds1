@@ -1,1 +1,12 @@
 Hash table is used to store data having key value pair
+
+[,,,,,,,,,,,,,]
+O(1) runtime constant
+
+function HashTable(size){
+    this.buckets = Array(size);
+    this.numBuckets = this.buckets.length;
+}
+
+var myHT = new HashTable(10);
+{buckets: [,,,,,,,,,], numBuckets: 10}
