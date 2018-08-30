@@ -74,3 +74,5 @@ HashTable.prototype.get = function(key){
         return null;
     }
 }
+
+Cons -- No reference to other piece of data unlike linkedlist and binarysearchtree but can be incorporated
