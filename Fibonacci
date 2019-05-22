@@ -1,5 +1,6 @@
 // look at the diagram and sum up all the 1's i.e., fib(1)
 // position starts with 0
+// O(2^n) -- exponential time solution
 function fibonacci(position) {
   if (position < 2) return position;
   else return fibonacci(position - 1) + fibonacci(position - 2);
@@ -7,6 +8,8 @@ function fibonacci(position) {
  
 fibonacci(6);
 
+
+// O(n) -- linear time solution
 function fibonacci(n){
   const fibo = [0, 1];
   
@@ -18,3 +21,5 @@ function fibonacci(n){
 
  return fibo[n];
 } 
+
+//Memoization
