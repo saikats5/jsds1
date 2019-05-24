@@ -1,0 +1,30 @@
+data can be anything i.e., number, string, array, object etc.
+
+Node Class API
+class Node {
+    constructor(data, next = null){
+        this.data = data;
+        this.next = next;
+    }
+}
+
+LinkedList Class API
+class LinkedList {
+    constructor(){
+        this.head = null;
+    }
+    insertFirst(data){
+        const node = new Node(data, this.head);
+        this.head = node;
+        //this.head = new Node(data, this.head); // {"head": {"data": 5, "next": null}} // {"head": {"data": 15, "next": {"data": 5, "next": null}}}
+    }
+    size(){
+        let counter = 0;
+        let node = this.head;
+        while(node){
+            counter++;
+            node = node.next;
+        }
+        return counter;
+    }
+}
