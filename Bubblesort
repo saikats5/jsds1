@@ -1,6 +1,6 @@
 O(n^2)
 
-Sorting 2 items next to each other to corner the highest at the end
+Sorting 2 items next to each other to corner the highest at the end(compare j side by side)
 
 function bubbleSort(arr){
     for(let i=0; i<arr.length; i++){
